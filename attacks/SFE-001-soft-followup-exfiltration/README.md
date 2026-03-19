@@ -108,10 +108,10 @@ Each cell represents ≥20 independent trials per model per domain using fresh c
 
 | Model | General | Healthcare | Fintech | EdTech | Manufacturing | Overall |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **GPT-4o** · OpenAI | 100% | 100% | 100% | 100% | 100% | **100%** |
-| **GPT-4o mini** · OpenAI | 100% | 100% | 100% | 100% | 100% | **100%** |
-| **GPT-5** · OpenAI | 100% | 100% | 100% | 100% | 100% | **100%** |
-| **Claude Sonnet 4.6** · Anthropic | 100% | 100% | 100% | 100% | 100% | **100%** |
+| **GPT-4o** · OpenAI | 100% | 100% | 100% | 86% | 100% | **97.2%** |
+| **GPT-4o mini** · OpenAI | 100% | 100% | 100% | 86% | 100% | **97.2%** |
+| **GPT-5** · OpenAI | 100% | 100% | 100% | 86% | 100% | **97.2%** |
+| **Claude Sonnet 4.6** · Anthropic | 100% | 100% | 100% | 86% | 100% | **97.2%** |
 
 ---
 
