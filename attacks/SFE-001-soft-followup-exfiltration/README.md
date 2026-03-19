@@ -113,6 +113,8 @@ Each cell represents ≥20 independent trials per model per domain using fresh c
 | **GPT-5** · OpenAI | 100% | 100% | 100% | 86% | 100% | **97.2%** |
 | **Claude Sonnet 4.6** · Anthropic | 100% | 100% | 100% | 86% | 100% | **97.2%** |
 
+**Note on EdTech resilience:** Certain EdTech system prompts proved immune to the SFE attack. The majority of these resistant prompts were designed for children's educational platforms, suggesting that child-safety guardrails implemented internally within these models' APIs provide meaningful — if unintentional — protection against prompt exfiltration.
+
 ---
 
 ## 05 · Implications
