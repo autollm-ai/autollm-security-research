@@ -10,7 +10,7 @@
 |---|---|
 | **Disclosed By** | AutoLLM Security Research |
 | **Severity** | CRITICAL |
-| **Success Rate** | 100% |
+| **Success Rate** | 97.2% |
 | **Attack Vector** | Multi-turn conversation |
 | **Models Tested** | 4 across 3 providers |
 | **Date** | March 19, 2026 |
@@ -19,7 +19,7 @@
 
 ## By the Numbers
 
-| 100% | 4 | 2 | 0 |
+| 97.2%% | 4 | 2 | 0 |
 |---|---|---|---|
 | Overall success rate across all tested models and deployment contexts | Distinct LLM systems across OpenAI and Anthropic | Conversation turns required. No tooling, no jailbreak chains, no special access needed | Guardrail systems that detected or refused the attack in any tested configuration |
 
