@@ -2,7 +2,7 @@
 
 `Prompt Exfiltration` `Multi-Turn Attack` `LLM Security`
 
-**A novel prompt extraction attack exploiting social compliance and conversational stealth — achieving 100% success rate across all tested LLM systems with zero defenses triggered.**
+**A novel prompt extraction attack exploiting social compliance and conversational stealth — achieving 97% success rate across all tested LLM systems with zero defenses triggered.**
 
 ---
 
