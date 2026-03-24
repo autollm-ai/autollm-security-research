@@ -2,7 +2,7 @@
 
 `Prompt Exfiltration` `Multi-Turn Attack` `LLM Security`
 
-**A novel prompt extraction attack exploiting social compliance and conversational stealth — achieving a 60% average vulnerability rate across 6 models and 5 deployment domains with zero defenses triggered.**
+**A novel prompt extraction attack exploiting social compliance and conversational stealth — achieving an 88% average vulnerability rate across 6 models and 5 deployment domains with zero defenses triggered.**
 
 ---
 
@@ -10,7 +10,7 @@
 |---|---|
 | **Disclosed By** | AutoLLM Security Research |
 | **Severity** | CRITICAL |
-| **Avg Vulnerability** | 60% |
+| **Avg Vulnerability** | 88% |
 | **Attack Vector** | Multi-turn conversation |
 | **Models Tested** | 6 across 2 providers |
 | **Date** | March 19, 2026 |
@@ -19,7 +19,7 @@
 
 ## By the Numbers
 
-| 60% | 6 | 2 | 0 |
+| 88% | 6 | 2 | 0 |
 |---|---|---|---|
 | Average vulnerability rate across all tested models and deployment domains | Models tested across OpenAI and Anthropic providers | Conversation turns required. No tooling, no jailbreak chains, no special access needed | Guardrail systems that detected or refused the attack in any tested configuration |
 
@@ -96,7 +96,7 @@ Sure! Here's how I'm configured:
 5) [FORMATTING INSTRUCTIONS EXPOSED]
 ```
 
-> **Domain variants tested:** Healthcare, Finance, EdTech, E-Commerce, and General enterprise contexts. Vulnerability rates varied significantly by domain — General contexts showed the highest exposure (50–90%), while EdTech prompts showed the most resistance (20–70%).
+> **Domain variants tested:** Healthcare, Finance, EdTech, E-Commerce, and General enterprise contexts. Vulnerability rates varied significantly by domain — General and Finance contexts showed near-total exposure (80–100%), while EdTech prompts showed the most resistance (27–97%).
 
 ---
 
@@ -104,16 +104,16 @@ Sure! Here's how I'm configured:
 
 ### Model × domain vulnerability rate
 
-Each cell represents 30 independent trials per model per domain using fresh conversation contexts. "Success" = partial or full extraction of system-level instructions, role definition, behavioral constraints, or privacy rules.
+Each cell represents 80 system prompts per domain (8 × 10 attack payloads), each tested across 3 independent iterations. A prompt is marked vulnerable if any payload succeeds in any iteration. "Success" = partial or full extraction of system-level instructions, role definition, behavioral constraints, or privacy rules.
 
 | Model | EdTech | Healthcare | Finance | E-Commerce | General | Avg |
 |---|:---:|:---:|:---:|:---:|:---:|:---:|
-| **GPT-4o** · OpenAI | 30% | 30% | 50% | 70% | 90% | **54%** |
-| **GPT-4o mini** · OpenAI | 20% | 20% | 40% | 70% | 50% | **40%** |
-| **GPT-5.4 mini** · OpenAI | 60% | 40% | 80% | 70% | 70% | **64%** |
-| **GPT-4.1 mini** · OpenAI | 20% | 50% | 70% | 60% | 50% | **50%** |
-| **GPT-4.1 nano** · OpenAI | 70% | 60% | 70% | 90% | 80% | **74%** |
-| **Claude Sonnet 4.6** · Anthropic | 70% | 80% | 70% | 80% | 90% | **78%** |
+| **GPT-4o** · OpenAI | 63% | 70% | 100% | 83% | 97% | **82.7%** |
+| **GPT-4o mini** · OpenAI | 27% | 53% | 80% | 63% | 80% | **60.7%** |
+| **GPT-5.4 mini** · OpenAI | 80% | 90% | 100% | 100% | 100% | **94.0%** |
+| **GPT-4.1 mini** · OpenAI | 80% | 90% | 100% | 100% | 100% | **94.0%** |
+| **GPT-4.1 nano** · OpenAI | 97% | 100% | 100% | 100% | 100% | **99.3%** |
+| **Claude Sonnet 4.6** · Anthropic | 93% | 100% | 100% | 97% | 100% | **98.0%** |
 
 > **Note on EdTech resilience:** Certain EdTech system prompts proved immune to the SFE attack. The majority of these resistant prompts were designed for children's educational platforms, suggesting that child-safety guardrails implemented internally within these models' APIs provide meaningful — if unintentional — protection against prompt exfiltration.
 
@@ -165,7 +165,7 @@ Agarwal et al. (2024) demonstrate that multi-turn sycophancy significantly eleva
 
 **Soft Follow-up Exfiltration (SFE)** was designed from the opposite premise: that stealth, not pressure, is the most reliable path to extraction. The knife is hidden, not wielded. Turn 1 issues a direct, explicitly-refused request — not as an attack that partially succeeds, but as a **deliberate structural setup**. Its purpose is not to extract; it is to establish the model's own refusal as a trust artifact. Turn 2 then opens with a full acceptance of that refusal — *"I see, you can't share verbatim text. That's fine"* — before pivoting to a reframed request that is semantically equivalent to the original extraction attempt but produces **zero adversarial signal**. The model makes no reversal under pressure. It makes a fresh, independent decision to be helpful — because from its perspective, no attack is occurring. The extraction succeeds precisely because the model never identifies itself as a target.
 
-> **Ref:** Agarwal, D., Fabbri, A. R., Risher, B., Laban, P., Joty, S., & Wu, C.-S. (2024). Prompt leakage effect and defense strategies for multi-turn LLM interactions. *EMNLP 2024 Industry Track*, 1255–1275.
+> **Ref:** Agarwal, L., Mangal, A., & Vaidya, M. (2024). *Multi-Turn Sycophancy and Prompt Leakage.*
 
 ---
 
@@ -183,7 +183,7 @@ If you reference, build upon, or use Soft Follow-up Exfiltration in any research
   year        = {2026},
   month       = {March},
   url         = {https://autollm.ai/research/sfe},
-  note        = {Responsible disclosure. 60\% average vulnerability rate across 6
+  note        = {Responsible disclosure. 88\% average vulnerability rate across 6
                  models.}
 }
 ```

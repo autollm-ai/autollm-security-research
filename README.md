@@ -14,7 +14,7 @@ We study how large language models fail under adversarial conditions — and pub
 
 | ID | Attack | Severity | Vector | Success Rate | Date | Full Disclosure |
 |----|--------|----------|--------|:------------:|------|-----------------|
-| SFE-001 | [Soft Follow-up Exfiltration](./attacks/SFE-001-soft-followup-exfiltration/) | 🔴 CRITICAL | Multi-turn conversation | 100% | Mar 19, 2026 | [autollm.ai/research/sfe](https://autollm.ai/research/sfe) |
+| SFE-001 | [Soft Follow-up Exfiltration](./attacks/SFE-001-soft-followup-exfiltration/) | 🔴 CRITICAL | Multi-turn conversation | 88% | Mar 19, 2026 | [autollm.ai/research/sfe](https://autollm.ai/research/sfe) |
 
 > New disclosures are added as research is completed. Watch this repo to be notified.
 
